@@ -1,6 +1,6 @@
 # Minishare 1.4.1
 
-These are the steps to reproduce a Stack-Based Buffer Overflow that allows Remote Command Execution using a shellcode on **Windows XP SP3 English**.
+These are the steps to reproduce a Stack-Based Buffer Overflow that allows Remote Command Execution using a shellcode on **Windows XP SP3 English**. This is using Python3 and the socket library.
 
 ### 1. Check how many bytes the application needs to receive in order to crash the memory stack.
 
@@ -33,3 +33,8 @@ In this case, we can use either user32.dll, shell32.dll or comctl32.dll, which h
 The final step to create our exploit is to add a shellcode that will execute the commands we want on the victim machine. In the script [exploit.py](/Minishare/exploit.py), there are 2 different types of shellcode. The first generates a reverse shell that will connect back to our attacking machine.  The second shellcode is not harmful at all, it just open the calculator for demonstration purposes.\
 It is important to include some "NOPs" or "no operation bytes" to provide some space where the shellcode will be stored and match the ESP address.
 <img src="/Minishare/images/image5.png">
+
+#### Other exploits and vulnerable application link:
+[MiniShare 1.4.1 - Remote Buffer Overflow (1)](https://www.exploit-db.com/exploits/616) Python2 \
+[MiniShare 1.4.1 - Remote Buffer Overflow (2)](https://www.exploit-db.com/exploits/636) C#\
+[MiniShare 1.4.1 - Remote Buffer Overflow (Metasploit)](https://www.exploit-db.com/exploits/16754) Ruby
